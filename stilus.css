@@ -1,3 +1,5 @@
+*{box-sizing: border-box;}
+
 main {
   width: 400px;
   margin: auto;
@@ -24,7 +26,7 @@ main {
 .nevek{
   border:1px solid gray;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .kovetkezo{
@@ -33,4 +35,36 @@ main {
   border-radius: 5px;
   color:green;
   font-weight: bold;
+}
+
+.flex-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nevek {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.elso {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.masodik {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nyertes{
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  color:purple;
 }

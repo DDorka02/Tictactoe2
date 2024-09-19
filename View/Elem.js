@@ -1,31 +1,31 @@
 export default class Elem {
   #szuloelem;
   #divElem;
-  #id = 0;
-  constructor(id, ertek, szuloelem) {
+  #id;
+  constructor(id, szuloelem) {
     this.#szuloelem = szuloelem;
     this.#id = id;
-    this.kattinthat = true;
-    this.#megjelenit();
-    this.#divElem = this.#szuloelem.children("div:last-child");
+    this.kattinthato = true;
+    this.megjelenit();
+    this.#divElem = $("elem:last-child");
     this.#divElem.on("click", () => {
-      if (this.kattinthat) {
-        this.#trigger("k");
-        this.kattinthat = false;
+      if (this.kattinthato) {
+        this.trigger("k");
+        this.kattinthato = false;
       }
     });
   }
 
-  #megjelenit() {
-    let txt = `<div class="elem"><p></p></div>`;
-    this.#szuloelem.append(txt);
+  megjelenit() {
+    $(this.#szuloelem).append(`<div class="elem"><p></p></div>`);
+    
   }
 
-  setErtek() {
+  setErtek(jel) {
     this.#divElem.html(jel);
   }
 
-  #trigger(esemenynev) {
+  trigger(esemenynev) {
     const e = new CustomEvent(esemenynev, { detail: this.#id });
     window.dispatchEvent(e);
   }

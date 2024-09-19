@@ -1,18 +1,24 @@
 export default class Info {
-  #elem;
-  constructor(elem) {
-    this.#elem = elem;
-    this.#megjelenit();
+    #szuloelem;
+    constructor(szuloelem) {
+      this.#szuloelem = szuloelem;
+      this.megjelenit();
+    }
+  
+    megjelenit() {
+      $(this.#szuloelem).append(`
+        <div class="nevek flex-container">
+        <div class="elso">
+          <p>X játékos: <input type='text'></p></div>
+        <div class="masodik">
+          <p>O játékos: <input type='text'></p></div>
+        </div>
+        <div class="kovetkezo">
+          <p>kk</p></div>
+        <div class="nyertes">
+          <p>kk</p></div>
+        </div>
+      `);
+    }
   }
-
-  #megjelenit() {
-    let txt = `<div class="nevek row">
-            <p class="col-lg-6">X játékos</p><input type='text' class="col-lg-6">
-            <p class="col-lg-6">O játékos</p><input type='text' class="col-lg-6">
-          </div>
-    
-          <div class="kovetkezo row">
-              <p>kk</p></div>`;
-    this.#elem.append(txt);
-  }
-}
+  

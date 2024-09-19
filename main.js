@@ -1,5 +1,3 @@
-import JatekTer from "./View/Jatekter.js"
-import Info from "./View/Info.js"
+import Controller from "./contorrel/Controller.js"
 
-new Info()
-new JatekTer()
+new Controller()

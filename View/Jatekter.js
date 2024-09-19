@@ -33,8 +33,4 @@ export default class JatekTer{
         })
     }
 
-    ell(){
-        
-    }
-
 }
