@@ -31,6 +31,8 @@ export default class JatekTer{
     }
 
     megjelenit(){
+        let szuloElem=$(".jatekter")
+        szuloElem.empty()
         this.#lista.forEach((index)=>{
             new Elem(index,this.#taroloElem)
         })

@@ -1,3 +1,4 @@
-import Controller from "./contorrel/Controller.js"
+import Controller from "./Contorrel/Controller.js";
 
-new Controller()
+
+new Controller();
