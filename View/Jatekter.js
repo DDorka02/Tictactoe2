@@ -1,17 +1,22 @@
 import Elem from "./Elem.js";
 
 export default class JatekTer{
-    #aktElem="X";
-    #lista=[" "," "," "," "," "," "," "," "," "]
+    #aktElem;
+    #lista=[]
+    #taroloElem
     constructor(){
-            this.#megjelenit()
+        this.#aktElem="X"
+        this.#lista=[" "," "," "," "," "," "," "," "," "]
+        this.#taroloElem=taroloElem
+        this.#taroloElem.empty()
+        this.megjelenit()
             $(window).on("k",(event)=>{
                 console.log(event.detail)
                 let id =event.detail
                 this.#beallit(id)
 
             })
-
+        
     }
 
     #beallit(id){
@@ -22,14 +27,12 @@ export default class JatekTer{
         else{
             this.#aktElem = "X";
         }
-        this.#megjelenit()
+        this.megjelenit()
     }
 
-    #megjelenit(){
-        let szuloElem=$(".jatekter")
-        szuloElem.empty()
-        this.#lista.forEach((ertek,index)=>{
-            new Elem(index,ertek,szuloElem)
+    megjelenit(){
+        this.#lista.forEach((index)=>{
+            new Elem(index,this.#taroloElem)
         })
     }
 

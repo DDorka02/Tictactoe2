@@ -4,9 +4,12 @@ export default class Modell {
     //feladata a program aktuális állapotának az előállítása
   #lista = [];
   #index;
-  constructor(lista) {
+  #allapot
+  #lepes
+  constructor() {
     this.#lista = lista;
     this.#index = 0;
+    
   }
 
   /*getIndex() {
