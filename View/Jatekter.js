@@ -1,13 +1,11 @@
 import Elem from "./Elem.js";
 
-
 export default class JatekTer{
     #aktElem="X";
-    #lista=["X"," "," "," ","O"," "," "," "," "]
+    #lista=[" "," "," "," "," "," "," "," "," "]
     constructor(){
             this.#megjelenit()
-
-            $(window).on("lepes",(event)=>{
+            $(window).on("k",(event)=>{
                 console.log(event.detail)
                 let id =event.detail
                 this.#beallit(id)
@@ -31,7 +29,6 @@ export default class JatekTer{
         let szuloElem=$(".jatekter")
         szuloElem.empty()
         this.#lista.forEach((ertek,index)=>{
-
             new Elem(index,ertek,szuloElem)
         })
     }

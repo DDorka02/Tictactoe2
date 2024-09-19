@@ -4,10 +4,12 @@ main {
   text-align: center;
 }
 
+
 .jatekter {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
+  margin: 20px;
 }
 
 .jatekter div {
@@ -16,4 +18,19 @@ main {
   border-radius: 5px;
   font-size: 35px;
   cursor:grab;
+}
+
+
+.nevek{
+  border:1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.kovetkezo{
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  color:green;
+  font-weight: bold;
 }

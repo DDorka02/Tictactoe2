@@ -1,4 +1,5 @@
+import JatekTer from "./View/Jatekter.js"
+import Info from "./View/Info.js"
 
-import JatekTer from "./jatekter.js";
-
+new Info()
 new JatekTer()
