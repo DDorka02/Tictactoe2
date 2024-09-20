@@ -1,26 +1,60 @@
+
 export default class Modell {
-
-
   #lista = [];
-
-  constructor(lista) {
-    this.#lista = lista;
-    
+  #index;
+  #lepesszam;
+  #allapot;
+  constructor() {
+    //ez jellemzi a programunk aktuális állapotát
+    this.#allapot = "X";
+    this.#lepesszam = 0;
+    this.#lista = [".", ".", ".", ".", ".", ".", ".", ".", "."];
+    //kattintások száma 9-et elérte, akkor vége a játéknak
+    //győzelem figyelés
   }
 
-    getfuggolegesen(){
-
+  setAllapot(index) {
+    if (this.#allapot === "X") {
+      this.#allapot = "O";
+    } else {
+      this.#allapot = "X";
     }
+    this.#lista[index] = this.#allapot;
+    console.log(this.#lista);
+    this.#lepesszam++;
+  }
 
-    getviszintesen(){
-
+  getErtek() {
+    return this.#allapot;
+  }
+  getVegeVanE() {
+   let vEll= this.#vizszintesGyozelem();
+    if (vEll.indexOf("OOO") > -1) {
+      return "O nyert";
+    } else if (vEll.indexOf("XXX") > -1) {
+      return "X nyert";
+    } else if (this.#lepesszam === 9) {
+      return "Döntetlen!";
     }
-
-    getatlosan(){
-
-
+    return "tovabb";
+  }
+  #vizszintesGyozelem() {
+    /**
+     * végigmegyünk a listán, és sztringet képezünk az elemekből,
+     *  úgy, hogy minden harmadik után beteszünk egy @
+     */
+    let vEll = "";
+    for (let i = 0; i < 9; i++) {
+      vEll += this.#lista[i];
+      if (i % 3 === 2) {
+        vEll += "@";
+      }
     }
-
-    talalatok(){}
-
+    vEll += "@";
+    console.log(vEll);
+    console.log(vEll.indexOf("OOO"), vEll.indexOf("XXX"));
+    return vEll;
+  }
 }
+
+
