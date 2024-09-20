@@ -12,7 +12,7 @@ export default class Elem {
     this.#elem = $(`<div class="elem"><p></p></div>`);
     this.#pElem = this.#elem.find("p");
     this.#elem.on("click", () => {
-      if (this.kattinthato) {
+      if (this.kattinthato  === " ") {
         this.trigger("k");
         this.kattinthato = false;
       }
@@ -26,9 +26,7 @@ export default class Elem {
         this.#ertek = "X";
       }
     }
-  
-
-
+    
   trigger(esemenynev) {
     const e = new CustomEvent(esemenynev, { detail: this.#id });
     window.dispatchEvent(e);

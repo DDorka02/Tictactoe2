@@ -5,15 +5,13 @@ export default class JatekTer {
   #Elem;
   constructor(Elem) {
     this.#lista = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
-    this.#Elem = Elem.ertek;
+    new Elem(Elem);
     this.megjelenit();
     $(window).on("k", (event) => {
       console.log(event.detail);
 
     });
   }
-
-
 
   megjelenit() {
     let szuloElem = $(".jatekter");
