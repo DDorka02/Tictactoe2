@@ -11,7 +11,6 @@ export default class Modell {
   }
 
   setAllapot(index) {
-
     if (this.#allapot === "X") {
       this.#allapot = "O";
     } else {

@@ -8,7 +8,6 @@ export default class Elem {
     this.kattinhato = true;
     this.megjelenit();
     this.divElem = $(".elem:last-child");
-    this.pElem = this.divElem.children("p");
     this.divElem.on("click", () => {
       if (this.kattinhato) {
         this.#trigger("kivalaszt");
