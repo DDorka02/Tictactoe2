@@ -5,15 +5,13 @@ export default class Modell {
   #lepesszam;
   #allapot;
   constructor() {
-    //ez jellemzi a programunk aktuális állapotát
     this.#allapot = "X";
     this.#lepesszam = 0;
-    this.#lista = [".", ".", ".", ".", ".", ".", ".", ".", "."];
-    //kattintások száma 9-et elérte, akkor vége a játéknak
-    //győzelem figyelés
+    this.#lista = [];
   }
 
   setAllapot(index) {
+
     if (this.#allapot === "X") {
       this.#allapot = "O";
     } else {
@@ -39,10 +37,6 @@ export default class Modell {
     return "tovabb";
   }
   #vizszintesGyozelem() {
-    /**
-     * végigmegyünk a listán, és sztringet képezünk az elemekből,
-     *  úgy, hogy minden harmadik után beteszünk egy @
-     */
     let vEll = "";
     for (let i = 0; i < 9; i++) {
       vEll += this.#lista[i];

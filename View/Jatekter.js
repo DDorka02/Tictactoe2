@@ -11,12 +11,13 @@ export default class JatekTer {
     this.megjelenit();
     
   }
-  
+
   megjelenit() {
     let szuloElem = $(".jatekter");
     szuloElem.empty();
-    this.#lista.forEach((index) => {
+    this.#lista.forEach((value, index) => {
       new Elem(index,szuloElem);
     });
   }
 }
+ 

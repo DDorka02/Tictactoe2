@@ -10,9 +10,10 @@ export default class Elem {
     this.divElem = $(".elem:last-child");
     this.pElem = this.divElem.children("p");
     this.divElem.on("click", () => {
-      if (this.kattinthato) {
-        this.trigger("k");
-        this.kattinthato = false;
+      if (this.kattinhato) {
+        this.#trigger("kivalaszt");
+        this.kattinhato = false;
+        
       }
     });
   }
@@ -25,13 +26,13 @@ export default class Elem {
   setErtek(jel) {
     this.pElem.html(jel);
   }
+
   getIndex() {
     return this.#id;
   }
-   
-    
-  trigger(esemenynev) {
-    const e = new CustomEvent(esemenynev, { detail: this.#id });
+
+  #trigger(esemenynev) {
+    const e = new CustomEvent(esemenynev, { detail: this });
     window.dispatchEvent(e);
   }
 

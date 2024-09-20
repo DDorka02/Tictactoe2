@@ -5,12 +5,10 @@ import Info from "../View/Info.js";
 export default class Controller{
     constructor() {
         const ADATOK =$(".adatok")
+        const TARTALOM = $(".jatekter")
         this.MODELL = new Modell();
         new Info(ADATOK)
-        for (let index = 0; index < 9; index++) {
-          new JatekTer($(".jatekter"), index);
-        }
-    
+        new JatekTer(TARTALOM);
         $(window).on("k", (event) => {
           console.log(event.detail); 
           this.MODELL.setAllapot(event.detail.getIndex());
