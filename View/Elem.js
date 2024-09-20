@@ -1,17 +1,14 @@
 export default class Elem {
-  #id;
-  #kattinhato;
-  #ertek;
-  #elem;
-  #pElem;
-
-  constructor(id) {
+    #szuloelem;
+    #divElem;
+    #id;
+    constructor(id, szuloelem) {
+    this.#szuloelem = szuloelem;
     this.#id = id;
-    this.#kattinhato = true;
-    this.#ertek = " ";
-    this.#elem = $(`<div class="elem"><p></p></div>`);
-    this.#pElem = this.#elem.find("p");
-    this.#elem.on("click", () => {
+    this.kattinhato = true;
+    this.megjelenit();
+    this.#divElem = $(".elem:last-child");
+    this.#divElem.on("click", () => {
       if (this.kattinthato  === " ") {
         this.trigger("k");
         this.kattinthato = false;
@@ -19,13 +16,15 @@ export default class Elem {
     });
   }
 
-  setErtek() {
-      if (this.#ertek === "X") {
-        this.#ertek = "O";
-      } else {
-        this.#ertek = "X";
-      }
+  megjelenit() {
+    $(this.#szuloelem).append(`<div class="elem"><p></p></div>`);
+    
+  }
+
+    setErtek(jel) {
+      this.#divElem.html(jel);
     }
+   
     
   trigger(esemenynev) {
     const e = new CustomEvent(esemenynev, { detail: this.#id });
