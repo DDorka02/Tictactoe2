@@ -1,23 +1,21 @@
 import Elem from "./Elem.js";
 
 export default class JatekTer {
-  #aktElem;
-  #lista = [];
+  #lista;
   #taroloElem;
-  constructor(taroloElem) {
-    this.#aktElem = "X";
-    this.#lista = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+  constructor(taroloElem,lista) {
+    this.#lista = lista;
     this.#taroloElem = taroloElem;
     this.megjelenit();
     
   }
 
   megjelenit() {
-    let szuloElem = $(".jatekter");
-    szuloElem.empty();
-    this.#lista.forEach((value, index) => {
-      new Elem(index,szuloElem);
-    });
+    this.#taroloElem.empty();
+    for (let index = 0; index < 9; index++) {
+      new Elem(index, this.#taroloElem);
+    }
+    };
   }
-}
+
  

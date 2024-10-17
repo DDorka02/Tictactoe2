@@ -8,7 +8,7 @@ export default class Controller{
         const TARTALOM = $(".jatekter")
         this.MODELL = new Modell();
         new Info(ADATOK)
-        new JatekTer(TARTALOM);
+        new JatekTer(TARTALOM, this.MODELL.getAllapot());
         $(window).on("k", (event) => {
           console.log(event.detail); 
           this.MODELL.setAllapot(event.detail.getIndex());

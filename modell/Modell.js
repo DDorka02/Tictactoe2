@@ -1,29 +1,26 @@
 
 export default class Modell {
-  #lista = [];
-  #index;
+  #lista;
   #lepesszam;
-  #allapot;
   constructor() {
-    this.#allapot = "X";
     this.#lepesszam = 0;
-    this.#lista = [];
+    this.#lista = ["", "", "", "", "", "", "", "", ""];
+  }
+
+  getAllapot() {
+    return this.#lista;
   }
 
   setAllapot(index) {
-    if (this.#allapot === "X") {
-      this.#allapot = "O";
-    } else {
-      this.#allapot = "X";
+    if (!this.#lista[index]) {
+      this.#lepesszam[index] = this.#lepesszam % 2 == 0 ? "X" : "O";
     }
-    this.#lista[index] = this.#allapot;
-    console.log(this.#lista);
-    this.#lepesszam++;
   }
 
   getErtek() {
-    return this.#allapot;
+    return this.#lepesszam;
   }
+
   getVegeVanE() {
    let vEll= this.#vizszintesGyozelem();
     if (vEll.indexOf("OOO") > -1) {
